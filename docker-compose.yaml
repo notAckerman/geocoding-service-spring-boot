@@ -19,7 +19,7 @@ services:
       - 8081:8080
     environment:
       SPRING_DATA_REDIS_HOST: redis
-      YANDEX_API_KEY: 9b5fa5d7-27f0-47a5-ae25-01df32161416
+      YANDEX_API_KEY: <YOUR_API_KEY>
 
 volumes:
   redis_volume:
