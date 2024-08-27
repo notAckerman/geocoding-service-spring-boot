@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: spring-geocoding-service
+
+  cache:
+    redis:
+      time-to-live: 600000
+    type: redis
+
+yandex:
+  api:
+    key: ${YANDEX_API_KEY}
+
+server:
+  port: 8080

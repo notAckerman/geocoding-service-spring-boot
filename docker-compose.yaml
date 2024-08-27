@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: cache
+    restart: always
+    volumes:
+      - redis_volume:/data
+    ports:
+      - 6379:6379
+
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - redis
+    container_name: application
+    ports:
+      - 8081:8080
+    environment:
+      SPRING_DATA_REDIS_HOST: redis
+      YANDEX_API_KEY: 9b5fa5d7-27f0-47a5-ae25-01df32161416
+
+volumes:
+  redis_volume:
